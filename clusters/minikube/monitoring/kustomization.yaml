@@ -8,3 +8,4 @@ resources:
   - helm-releases/postgres.yaml
   - configmaps/grafana-dashboards.yaml
   - alerts/alert-rules.yaml
+  - helm-repositories.yaml
