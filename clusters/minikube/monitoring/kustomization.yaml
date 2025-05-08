@@ -1,6 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+  - namespace.yaml # Add this line
   - helm-releases/prometheus.yaml
   - helm-releases/loki.yaml
   - helm-releases/grafana.yaml
