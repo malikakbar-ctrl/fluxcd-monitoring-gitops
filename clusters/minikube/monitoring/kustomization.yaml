@@ -1,13 +1,10 @@
-apiVersion: kustomize.toolkit.fluxcd.io/v1
+apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-metadata:
-  name: monitoring
-  namespace: flux-system
-spec:
-  interval: 5m0s
-  path: ./monitoring
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
-  timeout: 2m0s
+resources:
+  - helm-releases/prometheus.yaml
+  - helm-releases/loki.yaml
+  - helm-releases/grafana.yaml
+  - helm-releases/mysql.yaml
+  - helm-releases/postgres.yaml
+  - configmaps/grafana-dashboards.yaml
+  - alerts/alert-rules.yaml
